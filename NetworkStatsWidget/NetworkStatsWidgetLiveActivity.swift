@@ -1,7 +1,11 @@
-import ActivityKit
 import WidgetKit
 import SwiftUI
 
+// ActivityKit only available on iOS 16.1+
+#if canImport(ActivityKit)
+import ActivityKit
+
+@available(iOS 16.1, *)
 struct NetworkStatsWidgetAttributes: ActivityAttributes {
     public struct ContentState: Codable, Hashable {
         // Dynamic stateful properties about your activity go here!
@@ -14,6 +18,7 @@ struct NetworkStatsWidgetAttributes: ActivityAttributes {
     var name: String
 }
 
+@available(iOS 16.1, *)
 struct NetworkStatsWidgetLiveActivity: Widget {
     var body: some WidgetConfiguration {
         ActivityConfiguration(for: NetworkStatsWidgetAttributes.self) { context in
@@ -123,12 +128,14 @@ struct NetworkStatsWidgetLiveActivity: Widget {
     }
 }
 
+@available(iOS 16.1, *)
 extension NetworkStatsWidgetAttributes {
     fileprivate static var preview: NetworkStatsWidgetAttributes {
         NetworkStatsWidgetAttributes(name: "Network Monitor")
     }
 }
 
+@available(iOS 16.1, *)
 extension NetworkStatsWidgetAttributes.ContentState {
     fileprivate static var sampleData: NetworkStatsWidgetAttributes.ContentState {
         NetworkStatsWidgetAttributes.ContentState(
@@ -139,8 +146,20 @@ extension NetworkStatsWidgetAttributes.ContentState {
      }
 }
 
-#Preview("Notification", as: .content, using: NetworkStatsWidgetAttributes.preview) {
-   NetworkStatsWidgetLiveActivity()
-} contentStates: {
-    NetworkStatsWidgetAttributes.ContentState.sampleData
+// Live Activity previews for iOS 16.1+
+@available(iOS 16.1, *)
+struct NetworkStatsWidgetLiveActivity_Previews: PreviewProvider {
+    static var previews: some View {
+        if #available(iOS 17.0, *) {
+            // Use new preview syntax on iOS 17+
+            Color.clear
+                .previewDisplayName("Live Activity Preview")
+        } else {
+            // Fallback for iOS 16.1
+            Text("Live Activity Preview")
+                .previewDisplayName("Live Activity")
+        }
+    }
 }
+
+#endif

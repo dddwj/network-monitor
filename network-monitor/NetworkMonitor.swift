@@ -115,8 +115,8 @@ class NetworkMonitor: ObservableObject {
             
             if interface.ifa_addr?.pointee.sa_family == UInt8(AF_LINK) {
                 let data = unsafeBitCast(interface.ifa_data, to: UnsafeMutablePointer<if_data>.self)
-                downloadBytes += data.pointee.ifi_ibytes
-                uploadBytes += data.pointee.ifi_obytes
+                downloadBytes += UInt64(data.pointee.ifi_ibytes)
+                uploadBytes += UInt64(data.pointee.ifi_obytes)
             }
         }
         

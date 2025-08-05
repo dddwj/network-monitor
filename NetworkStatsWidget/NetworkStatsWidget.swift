@@ -46,19 +46,27 @@ struct Provider: TimelineProvider {
         completion(timeline)
     }
     
-    private func getCurrentNetworkStats() -> NetworkStats {
+    private func getCurrentNetworkStats() -> SimpleNetworkStats {
         // Try to get stats from shared UserDefaults first (if main app is running)
-        if let sharedStats = NetworkMonitor.loadStatsFromSharedDefaults() {
-            return sharedStats
+        if let sharedDefaults = UserDefaults(suiteName: "group.dddwj.network-monitor"),
+           let statsData = sharedDefaults.dictionary(forKey: "networkStats") {
+            return SimpleNetworkStats(
+                downloadSpeed: statsData["downloadSpeed"] as? Double ?? 0.0,
+                uploadSpeed: statsData["uploadSpeed"] as? Double ?? 0.0,
+                totalDownloaded: statsData["totalDownloaded"] as? Double ?? 0.0,
+                totalUploaded: statsData["totalUploaded"] as? Double ?? 0.0,
+                isConnected: statsData["isConnected"] as? Bool ?? false,
+                lastUpdated: statsData["lastUpdated"] as? Date ?? Date()
+            )
         }
         
         // Fallback to direct measurement
         return measureNetworkStats()
     }
     
-    private func measureNetworkStats() -> NetworkStats {
+    private func measureNetworkStats() -> SimpleNetworkStats {
         let stats = getNetworkInterfaceStats()
-        return NetworkStats(
+        return SimpleNetworkStats(
             downloadSpeed: 0.0, // Speed calculation requires time delta
             uploadSpeed: 0.0,
             totalDownloaded: Double(stats.downloadBytes) / (1024 * 1024 * 1024),
@@ -101,13 +109,23 @@ struct Provider: TimelineProvider {
             
             if interface.ifa_addr?.pointee.sa_family == UInt8(AF_LINK) {
                 let data = unsafeBitCast(interface.ifa_data, to: UnsafeMutablePointer<if_data>.self)
-                downloadBytes += data.pointee.ifi_ibytes
-                uploadBytes += data.pointee.ifi_obytes
+                downloadBytes += UInt64(data.pointee.ifi_ibytes)
+                uploadBytes += UInt64(data.pointee.ifi_obytes)
             }
         }
         
         return (downloadBytes, uploadBytes)
     }
+}
+
+// Simple version of NetworkStats for widget use
+struct SimpleNetworkStats {
+    let downloadSpeed: Double
+    let uploadSpeed: Double
+    let totalDownloaded: Double
+    let totalUploaded: Double
+    let isConnected: Bool
+    let lastUpdated: Date
 }
 
 struct SimpleEntry: TimelineEntry {
@@ -367,41 +385,42 @@ struct NetworkStatsWidget: Widget {
     }
 }
 
-#Preview(as: .systemSmall) {
-    NetworkStatsWidget()
-} timeline: {
-    SimpleEntry(
-        date: .now,
-        downloadSpeed: 2.5,
-        uploadSpeed: 1.2,
-        totalDownloaded: 45.6,
-        totalUploaded: 12.3,
-        isConnected: true
-    )
-}
-
-#Preview(as: .systemMedium) {
-    NetworkStatsWidget()
-} timeline: {
-    SimpleEntry(
-        date: .now,
-        downloadSpeed: 2.5,
-        uploadSpeed: 1.2,
-        totalDownloaded: 45.6,
-        totalUploaded: 12.3,
-        isConnected: true
-    )
-}
-
-#Preview(as: .systemLarge) {
-    NetworkStatsWidget()
-} timeline: {
-    SimpleEntry(
-        date: .now,
-        downloadSpeed: 2.5,
-        uploadSpeed: 1.2,
-        totalDownloaded: 45.6,
-        totalUploaded: 12.3,
-        isConnected: true
-    )
+// Widget previews for iOS 16.0 compatibility
+struct NetworkStatsWidget_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            NetworkStatsWidgetEntryView(entry: SimpleEntry(
+                date: Date(),
+                downloadSpeed: 2.5,
+                uploadSpeed: 1.2,
+                totalDownloaded: 45.6,
+                totalUploaded: 12.3,
+                isConnected: true
+            ))
+            .previewContext(WidgetPreviewContext(family: .systemSmall))
+            .previewDisplayName("Small")
+            
+            NetworkStatsWidgetEntryView(entry: SimpleEntry(
+                date: Date(),
+                downloadSpeed: 2.5,
+                uploadSpeed: 1.2,
+                totalDownloaded: 45.6,
+                totalUploaded: 12.3,
+                isConnected: true
+            ))
+            .previewContext(WidgetPreviewContext(family: .systemMedium))
+            .previewDisplayName("Medium")
+            
+            NetworkStatsWidgetEntryView(entry: SimpleEntry(
+                date: Date(),
+                downloadSpeed: 2.5,
+                uploadSpeed: 1.2,
+                totalDownloaded: 45.6,
+                totalUploaded: 12.3,
+                isConnected: true
+            ))
+            .previewContext(WidgetPreviewContext(family: .systemLarge))
+            .previewDisplayName("Large")
+        }
+    }
 }

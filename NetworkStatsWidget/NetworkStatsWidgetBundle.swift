@@ -5,6 +5,11 @@ import SwiftUI
 struct NetworkStatsWidgetBundle: WidgetBundle {
     var body: some Widget {
         NetworkStatsWidget()
-        NetworkStatsWidgetLiveActivity()
+        // Live Activity requires iOS 16.1+ and ActivityKit
+        #if canImport(ActivityKit)
+        if #available(iOS 16.1, *) {
+            NetworkStatsWidgetLiveActivity()
+        }
+        #endif
     }
 }

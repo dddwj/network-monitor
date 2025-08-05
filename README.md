@@ -14,9 +14,14 @@ A SwiftUI application for iOS and macOS that monitors real-time network statisti
 
 ## Requirements
 
-- iOS 16.0+ / macOS 13.0+
+- **iOS 16.0+** (iOS-only application)
 - Xcode 15.0+
 - Swift 5.9+
+
+**Note**: 
+- iOS 16.1+ is required for Live Activities and Dynamic Island support
+- The basic widget functionality works on iOS 16.0+
+- This app is iOS-only and does not support macOS
 
 ## Installation
 
@@ -87,6 +92,11 @@ Network statistics are gathered using:
 2. **Background Monitoring**: Network monitoring requires the app to be running. The widget shows cached data when the app is not active.
 
 3. **Permissions**: The app reads system network interface statistics and doesn't require special permissions, but some detailed metrics may be limited in sandboxed environments.
+
+4. **Platform Support**: 
+   - iOS-only application (no macOS support)
+   - Live Activities and Dynamic Island features require iOS 16.1+
+   - Basic widgets work on iOS 16.0+
 
 ## Customization
 
