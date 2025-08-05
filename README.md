@@ -26,16 +26,16 @@ A SwiftUI application for iOS and macOS that monitors real-time network statisti
    cd network-monitor
    ```
 
-2. Open `NetworkMonitor.xcodeproj` in Xcode
+2. Open `network-monitor.xcodeproj` in Xcode
 
 3. Set up App Groups:
    - In the Capabilities tab for both the main app and widget extension targets
    - Enable "App Groups"
-   - Add group: `group.com.networkmonitor.app`
+   - Add group: `group.dddwj.network-monitor`
 
 4. Configure your development team and bundle identifiers:
-   - Main app: `com.networkmonitor.app` 
-   - Widget extension: `com.networkmonitor.app.NetworkStatsWidgetExtension`
+   - Main app: `dddwj.network-monitor` 
+   - Widget extension: `dddwj.network-monitor.NetworkStatsWidget`
 
 5. Build and run the project
 

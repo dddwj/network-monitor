@@ -5,15 +5,15 @@
 1. **Open the Project**
    ```bash
    cd /Users/wdong01/codes/network-monitor
-   open NetworkMonitor.xcodeproj
+   open network-monitor.xcodeproj
    ```
 
 2. **Configure App Groups** (Required for widget data sharing)
-   - Select the `NetworkMonitor` target
+   - Select the `network-monitor` target
    - Go to "Signing & Capabilities"
    - Click "+" and add "App Groups"
-   - Enable `group.com.networkmonitor.app`
-   - Repeat for `NetworkStatsWidgetExtension` target
+   - Enable `group.dddwj.network-monitor`
+   - Repeat for `NetworkStatsWidget` target
 
 3. **Set Development Team**
    - In both targets, set your Apple Developer Team

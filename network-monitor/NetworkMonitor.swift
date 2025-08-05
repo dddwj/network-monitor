@@ -124,7 +124,7 @@ class NetworkMonitor: ObservableObject {
     }
     
     // Shared data structure for widget communication
-    static let sharedUserDefaults = UserDefaults(suiteName: "group.com.networkmonitor.app")
+    static let sharedUserDefaults = UserDefaults(suiteName: "group.dddwj.network-monitor")
     
     func saveStatsForWidget() {
         guard let sharedDefaults = NetworkMonitor.sharedUserDefaults else { return }
