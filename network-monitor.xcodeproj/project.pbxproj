@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5A9E1FAF2E41A968009C4511 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A9E1FAE2E41A968009C4511 /* WidgetKit.framework */; };
-		5A9E1FB12E41A968009C4511 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A9E1FB02E41A968009C4511 /* SwiftUI.framework */; };
-		5A9E1FC22E41A96A009C4511 /* MyWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5A9E1FAC2E41A968009C4511 /* MyWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5A9E21FA2E41AEF9009C4511 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A9E21F92E41AEF9009C4511 /* SwiftUI.framework */; };
+		5A9E21FC2E41AF00009C4511 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A9E21FB2E41AF00009C4511 /* WidgetKit.framework */; };
+		5A9E22022E41B1BA009C4511 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A9E21FB2E41AF00009C4511 /* WidgetKit.framework */; };
+		5A9E22032E41B1BA009C4511 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A9E21F92E41AEF9009C4511 /* SwiftUI.framework */; };
+		5A9E22122E41B1BB009C4511 /* network-monitor-widgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5A9E22012E41B1BA009C4511 /* network-monitor-widgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,12 +36,12 @@
 			remoteGlobalIDString = 5A3AE3A72E4197D30023CB4C;
 			remoteInfo = NetworkStatsWidget;
 		};
-		5A9E1FC02E41A96A009C4511 /* PBXContainerItemProxy */ = {
+		5A9E22102E41B1BB009C4511 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5A3AE3732E4197D10023CB4C /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 5A9E1FAB2E41A968009C4511;
-			remoteInfo = MyWidgetExtension;
+			remoteGlobalIDString = 5A9E22002E41B1BA009C4511;
+			remoteInfo = "network-monitor-widgetExtension";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -50,7 +52,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				5A9E1FC22E41A96A009C4511 /* MyWidgetExtension.appex in Embed Foundation Extensions */,
+				5A9E22122E41B1BB009C4511 /* network-monitor-widgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -62,18 +64,20 @@
 		5A3AE3892E4197D20023CB4C /* network-monitorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "network-monitorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A3AE3932E4197D20023CB4C /* network-monitorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "network-monitorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A3AE3A82E4197D30023CB4C /* NetworkStatsWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NetworkStatsWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		5A9E1FAC2E41A968009C4511 /* MyWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MyWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A9E1FAE2E41A968009C4511 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		5A9E1FB02E41A968009C4511 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		5A9E21F92E41AEF9009C4511 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk/System/Library/Frameworks/SwiftUI.framework; sourceTree = DEVELOPER_DIR; };
+		5A9E21FB2E41AF00009C4511 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk/System/Library/Frameworks/WidgetKit.framework; sourceTree = DEVELOPER_DIR; };
+		5A9E22012E41B1BA009C4511 /* network-monitor-widgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "network-monitor-widgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		5A9E1FC52E41A96A009C4511 /* Exceptions for "MyWidget" folder in "MyWidgetExtension" target */ = {
+		5A9E22132E41B1BB009C4511 /* Exceptions for "network-monitor-widget" folder in "network-monitor-widgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 5A9E1FAB2E41A968009C4511 /* MyWidgetExtension */;
+			target = 5A9E22002E41B1BA009C4511 /* network-monitor-widgetExtension */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -93,17 +97,12 @@
 			path = "network-monitorUITests";
 			sourceTree = "<group>";
 		};
-		5A3AE3AA2E4197D30023CB4C /* NetworkStatsWidget */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = NetworkStatsWidget;
-			sourceTree = "<group>";
-		};
-		5A9E1FB22E41A968009C4511 /* MyWidget */ = {
+		5A9E22042E41B1BA009C4511 /* network-monitor-widget */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				5A9E1FC52E41A96A009C4511 /* Exceptions for "MyWidget" folder in "MyWidgetExtension" target */,
+				5A9E22132E41B1BB009C4511 /* Exceptions for "network-monitor-widget" folder in "network-monitor-widgetExtension" target */,
 			);
-			path = MyWidget;
+			path = "network-monitor-widget";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -134,15 +133,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A9E21FA2E41AEF9009C4511 /* SwiftUI.framework in Frameworks */,
+				5A9E21FC2E41AF00009C4511 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5A9E1FA92E41A968009C4511 /* Frameworks */ = {
+		5A9E21FE2E41B1BA009C4511 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A9E1FB12E41A968009C4511 /* SwiftUI.framework in Frameworks */,
-				5A9E1FAF2E41A968009C4511 /* WidgetKit.framework in Frameworks */,
+				5A9E22032E41B1BA009C4511 /* SwiftUI.framework in Frameworks */,
+				5A9E22022E41B1BA009C4511 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,10 +154,9 @@
 			isa = PBXGroup;
 			children = (
 				5A3AE37D2E4197D10023CB4C /* network-monitor */,
-				5A3AE3AA2E4197D30023CB4C /* NetworkStatsWidget */,
 				5A3AE38C2E4197D20023CB4C /* network-monitorTests */,
 				5A3AE3962E4197D20023CB4C /* network-monitorUITests */,
-				5A9E1FB22E41A968009C4511 /* MyWidget */,
+				5A9E22042E41B1BA009C4511 /* network-monitor-widget */,
 				5A9E1FAD2E41A968009C4511 /* Frameworks */,
 				5A3AE37C2E4197D10023CB4C /* Products */,
 			);
@@ -169,7 +169,7 @@
 				5A3AE3892E4197D20023CB4C /* network-monitorTests.xctest */,
 				5A3AE3932E4197D20023CB4C /* network-monitorUITests.xctest */,
 				5A3AE3A82E4197D30023CB4C /* NetworkStatsWidget.appex */,
-				5A9E1FAC2E41A968009C4511 /* MyWidgetExtension.appex */,
+				5A9E22012E41B1BA009C4511 /* network-monitor-widgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -177,6 +177,8 @@
 		5A9E1FAD2E41A968009C4511 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5A9E21FB2E41AF00009C4511 /* WidgetKit.framework */,
+				5A9E21F92E41AEF9009C4511 /* SwiftUI.framework */,
 				5A9E1FAE2E41A968009C4511 /* WidgetKit.framework */,
 				5A9E1FB02E41A968009C4511 /* SwiftUI.framework */,
 			);
@@ -199,7 +201,7 @@
 			);
 			dependencies = (
 				5A3AE3B02E4197D30023CB4C /* PBXTargetDependency */,
-				5A9E1FC12E41A96A009C4511 /* PBXTargetDependency */,
+				5A9E22112E41B1BB009C4511 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				5A3AE37D2E4197D10023CB4C /* network-monitor */,
@@ -269,9 +271,6 @@
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				5A3AE3AA2E4197D30023CB4C /* NetworkStatsWidget */,
-			);
 			name = NetworkStatsWidget;
 			packageProductDependencies = (
 			);
@@ -279,26 +278,26 @@
 			productReference = 5A3AE3A82E4197D30023CB4C /* NetworkStatsWidget.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		5A9E1FAB2E41A968009C4511 /* MyWidgetExtension */ = {
+		5A9E22002E41B1BA009C4511 /* network-monitor-widgetExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5A9E1FC62E41A96A009C4511 /* Build configuration list for PBXNativeTarget "MyWidgetExtension" */;
+			buildConfigurationList = 5A9E22142E41B1BB009C4511 /* Build configuration list for PBXNativeTarget "network-monitor-widgetExtension" */;
 			buildPhases = (
-				5A9E1FA82E41A968009C4511 /* Sources */,
-				5A9E1FA92E41A968009C4511 /* Frameworks */,
-				5A9E1FAA2E41A968009C4511 /* Resources */,
+				5A9E21FD2E41B1BA009C4511 /* Sources */,
+				5A9E21FE2E41B1BA009C4511 /* Frameworks */,
+				5A9E21FF2E41B1BA009C4511 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				5A9E1FB22E41A968009C4511 /* MyWidget */,
+				5A9E22042E41B1BA009C4511 /* network-monitor-widget */,
 			);
-			name = MyWidgetExtension;
+			name = "network-monitor-widgetExtension";
 			packageProductDependencies = (
 			);
-			productName = MyWidgetExtension;
-			productReference = 5A9E1FAC2E41A968009C4511 /* MyWidgetExtension.appex */;
+			productName = "network-monitor-widgetExtension";
+			productReference = 5A9E22012E41B1BA009C4511 /* network-monitor-widgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -325,7 +324,7 @@
 					5A3AE3A72E4197D30023CB4C = {
 						CreatedOnToolsVersion = 16.4;
 					};
-					5A9E1FAB2E41A968009C4511 = {
+					5A9E22002E41B1BA009C4511 = {
 						CreatedOnToolsVersion = 16.4;
 					};
 				};
@@ -348,7 +347,7 @@
 				5A3AE3A72E4197D30023CB4C /* NetworkStatsWidget */,
 				5A3AE3882E4197D20023CB4C /* network-monitorTests */,
 				5A3AE3922E4197D20023CB4C /* network-monitorUITests */,
-				5A9E1FAB2E41A968009C4511 /* MyWidgetExtension */,
+				5A9E22002E41B1BA009C4511 /* network-monitor-widgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -382,7 +381,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5A9E1FAA2E41A968009C4511 /* Resources */ = {
+		5A9E21FF2E41B1BA009C4511 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -420,7 +419,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5A9E1FA82E41A968009C4511 /* Sources */ = {
+		5A9E21FD2E41B1BA009C4511 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -445,10 +444,10 @@
 			target = 5A3AE3A72E4197D30023CB4C /* NetworkStatsWidget */;
 			targetProxy = 5A48523E2E419AD700065E79 /* PBXContainerItemProxy */;
 		};
-		5A9E1FC12E41A96A009C4511 /* PBXTargetDependency */ = {
+		5A9E22112E41B1BB009C4511 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5A9E1FAB2E41A968009C4511 /* MyWidgetExtension */;
-			targetProxy = 5A9E1FC02E41A96A009C4511 /* PBXContainerItemProxy */;
+			target = 5A9E22002E41B1BA009C4511 /* network-monitor-widgetExtension */;
+			targetProxy = 5A9E22102E41B1BB009C4511 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -591,7 +590,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
@@ -630,7 +629,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
@@ -655,7 +654,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9V6Z58HWDM;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "dddwj.network-monitorTests";
@@ -677,7 +676,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9V6Z58HWDM;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "dddwj.network-monitorTests";
@@ -698,7 +697,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9V6Z58HWDM;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "dddwj.network-monitorUITests";
@@ -719,7 +718,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9V6Z58HWDM;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "dddwj.network-monitorUITests";
@@ -742,12 +741,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9V6Z58HWDM;
-				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NetworkStatsWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Network Stats";
-				INFOPLIST_KEY_NSExtension = YES;
-				INFOPLIST_KEY_NSExtensionPointIdentifier = "com.apple.widgetkit-extension";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -777,12 +774,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9V6Z58HWDM;
-				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NetworkStatsWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Network Stats";
-				INFOPLIST_KEY_NSExtension = YES;
-				INFOPLIST_KEY_NSExtensionPointIdentifier = "com.apple.widgetkit-extension";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -813,7 +808,7 @@
 			};
 			name = Debug;
 		};
-		5A9E1FC32E41A96A009C4511 /* Debug */ = {
+		5A9E22152E41B1BB009C4511 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -822,8 +817,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9V6Z58HWDM;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MyWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = MyWidget;
+				INFOPLIST_FILE = "network-monitor-widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "network-monitor-widget";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -832,7 +827,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "dddwj.network-monitor.MyWidget";
+				PRODUCT_BUNDLE_IDENTIFIER = "dddwj.network-monitor.network-monitor-widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -842,7 +837,7 @@
 			};
 			name = Debug;
 		};
-		5A9E1FC42E41A96A009C4511 /* Release */ = {
+		5A9E22162E41B1BB009C4511 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -851,8 +846,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9V6Z58HWDM;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MyWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = MyWidget;
+				INFOPLIST_FILE = "network-monitor-widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "network-monitor-widget";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -861,7 +856,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "dddwj.network-monitor.MyWidget";
+				PRODUCT_BUNDLE_IDENTIFIER = "dddwj.network-monitor.network-monitor-widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -921,11 +916,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5A9E1FC62E41A96A009C4511 /* Build configuration list for PBXNativeTarget "MyWidgetExtension" */ = {
+		5A9E22142E41B1BB009C4511 /* Build configuration list for PBXNativeTarget "network-monitor-widgetExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5A9E1FC32E41A96A009C4511 /* Debug */,
-				5A9E1FC42E41A96A009C4511 /* Release */,
+				5A9E22152E41B1BB009C4511 /* Debug */,
+				5A9E22162E41B1BB009C4511 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
